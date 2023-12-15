@@ -1,3 +1,3 @@
 export function Age({age}){
-    return <p>You are {age}!</p>
+    return <p>Your age is {age}!</p>
 }
