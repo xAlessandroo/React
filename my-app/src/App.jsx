@@ -7,7 +7,7 @@ export function App(){
             <h1>My App</h1>
             <hr />
             <Welcome name="Alex" age={22}/>
-            <Counter />
+            <Counter initialValue={10}/>
         </div>
     )
 }
