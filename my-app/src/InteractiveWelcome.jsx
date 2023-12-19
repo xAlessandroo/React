@@ -1,19 +1,11 @@
 import { useState } from "react";
 import { Welcome } from "./Welcome";
 
-export function InteractiveWelcome(){
-
-    const [username, setUsername] = useState('');
-
-    function handleUsername(event){
-        const name = event.target.value
-        setUsername(name)
-    }
+export function InteractiveWelcome({ name = user }){
 
     return (
         <div>
-            <Welcome name={username}/>
-            <input type="text" onChange={handleUsername}/>
+            <Welcome name={name}/>
         </div>
     )
 }

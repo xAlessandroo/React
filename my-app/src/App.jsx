@@ -1,10 +1,10 @@
-import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 
 export function App(){
     return (
         <div>
             <h1>My app!</h1>
-            <InteractiveWelcome />
+            <Login />
         </div>
     )
 }
