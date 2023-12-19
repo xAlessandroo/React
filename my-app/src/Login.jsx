@@ -65,7 +65,7 @@ export function Login({ onLogin }) {
       <button type="submit" disabled={!data.username || !data.password}>
         Login!
       </button>
-      <button onClick={handleReset}>Reset</button>
+      <button type="reset" onClick={handleReset}>Reset</button>
 
       <pre>
         {JSON.stringify(data, null, 2)}
