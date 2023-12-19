@@ -27,7 +27,8 @@ export function Login({ onLogin }) {
     });
   }
 
-  function handleLogin(){
+  function handleLogin(event){
+    event.preventDefault()
     onLogin(data)
   }
 
@@ -36,7 +37,7 @@ export function Login({ onLogin }) {
   }
 
   return (
-    <div>
+    <form onSubmit={handleLogin}>
         <InteractiveWelcome name={data.username}/>
       <input
         type="text"
@@ -61,8 +62,7 @@ export function Login({ onLogin }) {
         onChange={handleChange}
       />
       <br />
-      <button disabled={!data.username || !data.password}
-      onClick={handleLogin}>
+      <button type="submit" disabled={!data.username || !data.password}>
         Login!
       </button>
       <button onClick={handleReset}>Reset</button>
@@ -70,6 +70,6 @@ export function Login({ onLogin }) {
       <pre>
         {JSON.stringify(data, null, 2)}
       </pre>
-    </div>
+    </form>
   );
 }
