@@ -31,6 +31,10 @@ export function Login({ onLogin }) {
     onLogin(data)
   }
 
+  function handleReset(){
+    setData(createData())
+  }
+
   return (
     <div>
         <InteractiveWelcome name={data.username}/>
@@ -56,11 +60,12 @@ export function Login({ onLogin }) {
         checked={data.remember}
         onChange={handleChange}
       />
-
+      <br />
       <button disabled={!data.username || !data.password}
       onClick={handleLogin}>
         Login!
       </button>
+      <button onClick={handleReset}>Reset</button>
 
       <pre>
         {JSON.stringify(data, null, 2)}
