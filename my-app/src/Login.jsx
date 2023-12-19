@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 
-export function Login() {
+export function Login({ onLogin }) {
   
     function createData() {
     return {
@@ -25,6 +25,10 @@ export function Login() {
         [name]: type === "checkbox" ? checked : value,
       };
     });
+  }
+
+  function handleLogin(){
+    onLogin(data)
   }
 
   return (
@@ -52,6 +56,11 @@ export function Login() {
         checked={data.remember}
         onChange={handleChange}
       />
+
+      <button disabled={!data.username || !data.password}
+      onClick={handleLogin}>
+        Login!
+      </button>
 
       <pre>
         {JSON.stringify(data, null, 2)}
