@@ -1,9 +1,9 @@
-import { CheckRadioForm } from "./CheckRadioForm";
+import { PostForm } from "./PostForm";
 
 export function App(){
     return (
         <div>
-            <CheckRadioForm />
+            <PostForm />
         </div>
     )
 }
