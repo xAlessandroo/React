@@ -1,6 +1,5 @@
-import { UncontrolledLogin } from "./UncontrolledLogin";
-import { Login } from "./Login"
-import { FocusableInput } from "./FocusableInput";
+import { Counter } from "./Counter";
+
 
 export function App(){
 
@@ -11,9 +10,7 @@ export function App(){
     return (
         <div>
             <h1>My app!</h1>
-            <Login onLogin={handleLogin}/>
-            {/* <UncontrolledLogin onLogin={handleLogin}/> */}
-            <FocusableInput />
+            <Counter />
         </div>
     )
 }
