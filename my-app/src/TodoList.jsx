@@ -20,6 +20,10 @@ export function TodoList(){
         setTodos([])
     }
 
+    function handleRemove(indexToRemove){
+        setTodos(prevTodos => prevTodos.filter((_, index) => index !== indexToRemove))
+    }
+
     return (
         <div>
             <form onSubmit={handleClick}>
@@ -31,7 +35,9 @@ export function TodoList(){
             <h2>ToDo List!</h2>
             <ul>
                 {todos.map((todo, index) => (
-                    <li key={index}>{todo}</li>
+                    <li key={index}>{todo}
+                        <button type="button" onClick={() => handleRemove(index)}>Remove</button>
+                    </li>
                 ))}
             </ul>
         </div>
