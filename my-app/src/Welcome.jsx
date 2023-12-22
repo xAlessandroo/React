@@ -1,6 +1,6 @@
-export function Welcome({ name = user }){
+export function Welcome({ name = 'user' }){
     return ( 
-        <div>
+        <div className="welcome">
              <h2>Welcome {name}</h2>
         </div>
     )

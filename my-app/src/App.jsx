@@ -1,6 +1,4 @@
-import { Colors } from "./Colors";
-import { Counter } from "./Counter";
-import { TodoList } from "./TodoList";
+import { Welcome } from './Welcome'
 
 export function App() {
   function handleLogin(data) {
@@ -10,8 +8,7 @@ export function App() {
   return (
     <div>
       <h1>My app!</h1>
-      <Counter />
-      <TodoList />
+      <Welcome />
     </div>
   );
 }
