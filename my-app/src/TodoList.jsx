@@ -1,4 +1,5 @@
 import { useState } from "react"
+import classes from "./TodoList.module.scss"
 
 export function TodoList(){
 
@@ -28,15 +29,15 @@ export function TodoList(){
         <div>
             <form onSubmit={handleClick}>
             <input type="text" value={value} onChange={handleInput} placeholder="Write your ToDo here!"/>
-            <button type="submit" onClick={handleClick}>Add ToDo to the list!</button>
-            <button type="reset" onClick={handleReset}>Reset ToDos</button>
+            <button className={classes.button} type="submit" onClick={handleClick}>Add ToDo to the list!</button>
+            <button className={classes.button} type="reset" onClick={handleReset}>Reset ToDos</button>
             </form>
             <hr />
             <h2>ToDo List!</h2>
             <ul>
                 {todos.map((todo, index) => (
                     <li key={index}>{todo}
-                        <button type="button" onClick={() => handleRemove(index)}>Remove</button>
+                        <button className={classes.remove}type="button" onClick={() => handleRemove(index)}>Remove</button>
                     </li>
                 ))}
             </ul>
