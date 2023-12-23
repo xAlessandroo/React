@@ -1,4 +1,5 @@
 import { Clock } from './Clock';
+import { Container } from './Container';
 import { TodoList } from './TodoList';
 import { Welcome } from './Welcome'
 
@@ -8,11 +9,10 @@ export function App() {
   }
 
   return (
-    <div>
-      <h1>My app!</h1>
-      <Welcome />
+    <Container title={<h1>My app!</h1>}>
+      <Welcome name='Alex'/>
       <Clock />
       <TodoList />
-    </div>
+    </Container>
   );
 }
