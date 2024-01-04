@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { TodoList } from "./TodoList";
 import { Welcome } from "./Welcome";
+import { GithubUsers } from "./GithubUsers";
 import { GithubUser } from "./GithubUser";
 
 export function App() {
@@ -20,7 +21,7 @@ export function App() {
   return (
     <Container title={<h1>My app!</h1>}>
       <Welcome name="Alex" />
-      <GithubUser username="xAlessandroo" />     
+      <GithubUsers />  
        <LanguageContext.Provider value={language}>
         <label htmlFor="languages">Select language</label>
       <select name="languages"value={language} onChange={handleSelect}>
