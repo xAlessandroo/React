@@ -6,6 +6,7 @@ import { TodoList } from "./TodoList";
 import { Welcome } from "./Welcome";
 import { GithubUsers } from "./GithubUsers";
 import { GithubUser } from "./GithubUser";
+import { Counter } from "./Counter";
 
 export function App() {
   function handleLogin(data) {
@@ -21,7 +22,6 @@ export function App() {
   return (
     <Container title={<h1>My app!</h1>}>
       <Welcome name="Alex" />
-      <GithubUsers />  
        <LanguageContext.Provider value={language}>
         <label htmlFor="languages">Select language</label>
       <select name="languages"value={language} onChange={handleSelect}>
@@ -30,7 +30,7 @@ export function App() {
       </select>
         <Clock />
       </LanguageContext.Provider>
-      <TodoList />
+      <Counter />
     </Container>
   );
 }
