@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Clock } from "./Clock";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-import { TodoList } from "./TodoList";
 import { Welcome } from "./Welcome";
-import { GithubUsers } from "./GithubUsers";
-import { GithubUser } from "./GithubUser";
 import { Counter } from "./Counter";
+import { GithubUser } from "./GithubUser";
 
 export function App() {
   function handleLogin(data) {
@@ -30,7 +28,7 @@ export function App() {
       </select>
         <Clock />
       </LanguageContext.Provider>
-      <Counter />
+      <GithubUser username="gianmarcotoso"/>
     </Container>
   );
 }
