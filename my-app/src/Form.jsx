@@ -42,7 +42,7 @@ export function Form() {
         <input type="text" name="name" placeholder="Enter name" onChange={handleChange} value={input.name}/>
         <input type="text" name="surname" placeholder="Enter surname" onChange={handleChange} value={input.surname}/>
         <input type="number" name="age" onChange={handleChange} value={input.age}/>
-        <button type="submit">Send!</button>
+        <button type="submit" disabled={!input.name || !input.surname}>Send!</button>
     </form>
     <ul>
         {items.map((item, index) => 
