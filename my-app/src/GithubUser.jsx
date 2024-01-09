@@ -1,15 +1,19 @@
-import { useGithubUser } from "./useGithubUser"
+import { useGithubUser } from "./useGithubUser";
 
+export function GithubUser({ username }) {
+  const { data, loading, error, onFetchUser } = useGithubUser(username);
 
-export function GithubUser({ username }){
+  function handleGetUserData() {
+    onFetchUser(username);
+  }
 
-    const { data } = useGithubUser(username)
-
-    return (
+  return (
     <div>
-        {data && <p>Name: {data.name}</p>}
-        {data && <p>Login: {data.login}</p>}
-        {data && <img src={data.avatar_url} alt="Avatar"/>}
+      <button onClick={handleGetUserData}>Load user data!</button>
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>There has been an error!</h1>}
+      {data && <h1>{data.name}</h1>}
+      {data && <img src={data.avatar_url} width={300} height={300} />}
     </div>
-    )
+  );
 }
