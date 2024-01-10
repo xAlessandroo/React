@@ -1,10 +1,9 @@
-import { Form } from "./Form";
-import { PostForm } from "./PostForm";
+import { MyForm } from "./MyForm";
 
 export function App(){
     return (
         <div>
-            <Form />
+            <MyForm />
         </div>
     )
 }

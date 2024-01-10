@@ -31,7 +31,7 @@ export function Form() {
         const {name, value, type, checked} = e.target;
         setInput({
             ...input,
-            [name]: type === "checkbox" ? checked : value
+            [name]: value
     })
     }
 
