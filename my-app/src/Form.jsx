@@ -28,7 +28,7 @@ export function Form() {
     }
 
     function handleChange(e){
-        const {name, value, type, checked} = e.target;
+        const {name, value} = e.target;
         setInput({
             ...input,
             [name]: value

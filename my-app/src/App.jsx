@@ -1,9 +1,9 @@
-import { MyForm } from "./MyForm";
+import { Form } from "./Form";
 
 export function App(){
     return (
         <div>
-            <MyForm />
+            <Form />
         </div>
     )
 }
