@@ -1,5 +1,10 @@
+import { Route, Routes } from "react-router-dom";
 import { Welcome } from "./Welcome";
 
 export function App(){
-    return <Welcome name='Alex' age={22}/>
+    return(
+    <Routes>
+        <Route path='/' element={<Welcome name='alessandro'/>}></Route>
+    </Routes> 
+    )
 }
