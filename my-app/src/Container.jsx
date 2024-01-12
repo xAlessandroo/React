@@ -1,17 +1,16 @@
 import { useState } from "react";
 
 export function Container({ title, children }) {
+  const [toggle, setToggle] = useState(false);
 
-    const [toggle, setToggle] = useState(false)
-
-    function handleToggle() {
-        setToggle((t) => !t)
-    }
+  function handleToggle() {
+    setToggle((t) => !t);
+  }
 
   return (
     <div className="container">
       <div>
-        {title}
+        <h1>{title}</h1>
         <button onClick={handleToggle}>Toggle</button>
       </div>
       {!toggle && <div>{children}</div>}
