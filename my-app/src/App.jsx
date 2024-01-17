@@ -3,15 +3,14 @@ import { Container } from "./Container";
 import { Welcome } from "./Welcome";
 import { ShowGithubUser } from "./ShowGithubUser";
 import { Counter } from "./Counter";
-import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 
 export function App() {
   return (
     <Container title="My App">
       <Routes>
         <Route path="/" exact element={<Welcome />}></Route>
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/users" element={<GithubUser />} >
+        <Route path="/users" element={<GithubUserList />} >
           <Route path=":username" element={<ShowGithubUser />}/>
         </Route>
           <Route
