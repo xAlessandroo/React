@@ -7,7 +7,7 @@ export function App() {
   return (
     <Container title={<h1>My app!</h1>}>
       <Welcome name="Alex" />
-      <GithubUser />
+      <GithubUser username='xAlessandroo'/>
     </Container>
   );
 }
