@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
+    "swr": "^2.2.4",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
