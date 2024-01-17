@@ -1,9 +1,12 @@
-import { Form } from "./Form";
+import { Route, Routes } from "react-router-dom";
+import { Posts } from "./Posts";
+import { Details } from './Details'
 
 export function App(){
     return (
-        <div>
-            <Form />
-        </div>
+        <Routes>
+            <Route path="/" element={<Posts />}/>
+            <Route path="/item/:id" element={<Details />}/>
+        </Routes>
     )
 }
