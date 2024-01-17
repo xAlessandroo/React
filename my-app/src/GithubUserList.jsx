@@ -13,6 +13,7 @@ export function GithubUserList(){
 
     return (
         <div>
+            <h2>GithubUser List</h2>
             <ul>
                 {users.map((user) =>(
                     <li key={user.login}>
