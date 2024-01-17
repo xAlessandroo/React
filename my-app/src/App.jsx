@@ -19,7 +19,7 @@ export function App() {
         />
         <Route path="/" element={<Welcome />}></Route>
         <Route path="counter" element={<Counter />} />
-        <Route path="/:username" element={<ShowGithubUser />}></Route>
+        <Route path="users/:username" element={<ShowGithubUser />}></Route>
      
       </Routes>
     </Container>
