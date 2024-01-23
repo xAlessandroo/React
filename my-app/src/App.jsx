@@ -1,7 +1,10 @@
+import { Form } from "./Form";
 
 export function App() {
 
   return (
-    <div></div>
+    <div>
+      <Form />
+    </div>
   )
 }
