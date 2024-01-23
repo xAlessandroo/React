@@ -1,18 +1,16 @@
-import { Container } from "./Container";
-import { Welcome } from "./Welcome";
-import { GithubUser } from "./GithubUser";
-import { SWRConfig } from "swr";
-
-const fetcher = url => fetch(url).then(response=> response.json())
+import { Route, Routes } from "react-router-dom"
+import FetchNameF1 from "./FetchNameF1"
+import ShowF1Details from "./ShowF1Details"
+import { ButtonLogin } from "./ButtonLogin"
 
 export function App() {
 
   return (
-    <Container title={<h1>My app!</h1>}>
-      <Welcome name="Alex" />
-      <SWRConfig value={{fetcher}}>
-      <GithubUser username='xAlessandroo'/>
-      </SWRConfig>
-    </Container>
-  );
+    <Routes>
+      <Route path="/" element={<ButtonLogin />}/>
+      <Route path='/el' element={<FetchNameF1/>} />
+      <Route path="/el/:pos"element={<ShowF1Details/>}/>
+    
+    </Routes>
+  )
 }
