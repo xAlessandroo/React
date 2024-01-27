@@ -1,75 +1,40 @@
-import { useState } from "react";
-import { InteractiveWelcome } from "./InteractiveWelcome";
+import { useState } from "react"
 
-export function Login({ onLogin }) {
-  
-    function createData() {
-    return {
-      username: "",
-      password: "",
-      remember: false,
-    };
-  }
+export function Login(){
 
-  const [data, setData] = useState(createData());
+    const createData = {
+        username: '',
+        password: ''
+    }
 
-  function handleChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
-    const checked = event.target.checked;
-    const type = event.target.type;
+    const [data, setData] = useState(createData)
+    const [error, setError] =useState('')
 
-    setData((d) => {
-      return {
-        ...d,
-        [name]: type === "checkbox" ? checked : value,
-      };
-    });
-  }
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(data);
+        setData(createData)
+        if(data.username.length < 5){
+            setError("Lo username deve essere di almeno 5 lettere!")
+        }
+    }
 
-  function handleLogin(event){
-    event.preventDefault()
-    onLogin(data)
-  }
+    function handleInput(e){
+        const {name, value} = e.target
+        setData((prevData) => ({
+            ...prevData,
+            [name] : value
+        }))
+    }
 
-  function handleReset(){
-    setData(createData())
-  }
-
-  return (
-    <form onSubmit={handleLogin}>
-        <InteractiveWelcome name={data.username}/>
-      <input
-        type="text"
-        name="username"
-        value={data.username}
-        onChange={handleChange}
-        placeholder="Insert username"
-      />
-      <input
-        type="password"
-        name="password"
-        value={data.password}
-        onChange={handleChange}
-        placeholder="Insert password"
-      />
-      <br />
-      <label htmlFor="remember">Remember for later</label>
-      <input
-        type="checkbox"
-        name="remember"
-        checked={data.remember}
-        onChange={handleChange}
-      />
-      <br />
-      <button type="submit" disabled={!data.username || !data.password}>
-        Login!
-      </button>
-      <button type="reset" onClick={handleReset}>Reset</button>
-
-      <pre>
-        {JSON.stringify(data, null, 2)}
-      </pre>
-    </form>
-  );
+    return(
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="username" onChange={handleInput} value={data.username} placeholder="username"/>
+                <input type="password" name="password" onChange={handleInput} value={data.password} placeholder="password"/>
+                <button type="submit" disabled={!data.username || !data.password}>SEND!</button>
+                {error && <h3>{error}</h3>}
+            </form>
+        </div>
+    )
 }

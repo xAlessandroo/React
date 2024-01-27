@@ -1,16 +1,20 @@
-import { Route, Routes } from "react-router-dom"
-import FetchNameF1 from "./FetchNameF1"
-import ShowF1Details from "./ShowF1Details"
-import { ButtonLogin } from "./ButtonLogin"
+import { Routes,Route } from "react-router-dom"
+import { Navigation } from "./Navigation"
+import { Fetch } from './Fetch'
+import { Contact } from "./Contact"
+import { Login } from "./Login"
 
 export function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<ButtonLogin />}/>
-      <Route path='/el' element={<FetchNameF1/>} />
-      <Route path="/el/:pos"element={<ShowF1Details/>}/>
-    
-    </Routes>
+    <div>
+      <Routes>
+        <Route path='/' element={<Navigation />}>
+        <Route path="/about-us" element={<Fetch />}/>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login s/>}/>
+        </Route>
+      </Routes>
+    </div>
   )
 }
