@@ -1,8 +1,8 @@
-import { Routes,Route } from "react-router-dom"
-import { Navigation } from "./Navigation"
+import { Routes, Route } from 'react-router-dom'
+import { Navigation } from './Navigation'
 import { Fetch } from './Fetch'
-import { Contact } from "./Contact"
-import { Login } from "./Login"
+import { AboutUs } from './AboutUs'
+import { Login } from './Login'
 
 export function App() {
 
@@ -10,10 +10,10 @@ export function App() {
     <div>
       <Routes>
         <Route path='/' element={<Navigation />}>
-        <Route path="/about-us" element={<Fetch />}/>
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login s/>}/>
+          <Route path='/about-us' element={<AboutUs />}/>
+          <Route path='/contact' element={<Fetch />} />
         </Route>
+        <Route path='/login' element={<Login />}/>
       </Routes>
     </div>
   )
