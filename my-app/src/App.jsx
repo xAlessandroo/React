@@ -1,10 +1,9 @@
-
+import Pokedex from "./Pokedex";
 
 export function App() {
-
   return (
-    <div>
-
-    </div>
-  )
+  <div>
+    <Pokedex />
+  </div>
+  );
 }
